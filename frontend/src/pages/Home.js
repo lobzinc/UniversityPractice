@@ -33,7 +33,7 @@ function Home() {
             <section className="hero">
                 <div className="hero-content">
                     <h1 className="hero-title">
-                        ВКУСНО? ВОЗМОЖНО!<br/>ДЕШЕВО? АБСОЛЮТНО!
+                        ВКУСНО? ВОЗМОЖНО!<br/>ДЕШЕВО? УСЛОВНО!
                     </h1>
                     <p className="hero-subtitle">
                         Заказывайте относительно свежие продукты из Семисвинова
