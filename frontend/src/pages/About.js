@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './About.css';
+import API_URL from '../api';
 
 function About() {
     const [companyInfo, setCompanyInfo] = useState(null);
@@ -8,7 +9,7 @@ function About() {
     useEffect(() => {
         const fetchCompanyInfo = async () => {
             try {
-                const response = await axios.get('http://localhost:5002/api/info');
+                const response = await axios.get(`${API_URL}/api/info`);
                 setCompanyInfo(response.data);
             } catch (error) {
                 console.error('Ошибка загрузки информации о компании:', error);

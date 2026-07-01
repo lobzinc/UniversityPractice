@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import './Profile.css';
+import API_URL from '../api';
 
 function Profile({ user, onLogout }) {
     const [messages, setMessages] = useState([]);
@@ -11,13 +12,13 @@ function Profile({ user, onLogout }) {
     const isAdmin = user.role === 'admin';
 
     const fetchMyMessages = useCallback(async () => {
-        const res = await fetch(`http://localhost:5002/api/support/my/${user.id}`);
+        const res = await fetch(`${API_URL}/api/support/my/${user.id}`);
         const data = await res.json();
         setMessages(data);
     }, [user.id]); // зависимость от user.id
 
     const fetchAllMessages = useCallback(async () => {
-        const res = await fetch('http://localhost:5002/api/support/all');
+        const res = await fetch(`${API_URL}/api/support/all`);
         const data = await res.json();
         setAllMessages(data);
     }, []);
@@ -33,7 +34,7 @@ function Profile({ user, onLogout }) {
     const handleSend = async () => {
         if (!newMessage.trim()) return;
 
-        await fetch('http://localhost:5002/api/support/send', {
+        await fetch(`${API_URL}/api/support/send`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userId: user.id, text: newMessage })
@@ -47,7 +48,7 @@ function Profile({ user, onLogout }) {
         const reply = replyText[messageId];
         if (!reply || !reply.trim()) return;
 
-        await fetch(`http://localhost:5002/api/support/reply/${messageId}`, {
+        await fetch(`${API_URL}/api/support/reply/${messageId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ reply })
@@ -58,7 +59,7 @@ function Profile({ user, onLogout }) {
     };
 
     const handleDelete = async (messageId) => {
-        await fetch(`http://localhost:5002/api/support/${messageId}`, {
+        await fetch(`${API_URL}/api/support/${messageId}`, {
             method: 'DELETE'
         });
         fetchAllMessages();

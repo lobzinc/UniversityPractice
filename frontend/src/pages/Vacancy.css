@@ -71,7 +71,6 @@
 .btn-red-large:active { transform: translateY(3px); box-shadow: none; }
 .btn-red-large:disabled { background: #999; box-shadow: none; }
 
-/* Стили результата */
 .stamp-success {
   color: #28a745;
   border: 4px solid #28a745;

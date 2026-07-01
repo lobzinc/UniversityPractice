@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Home.css';
+import API_URL from '../api';
 
 function Home() {
     const [popularProducts, setPopularProducts] = useState([]);
@@ -12,9 +13,9 @@ function Home() {
         const fetchData = async () => {
             try {
                 const [productsRes, categoriesRes, infoRes] = await Promise.all([
-                    axios.get('http://localhost:5002/api/products'),
-                    axios.get('http://localhost:5002/api/categories'),
-                    axios.get('http://localhost:5002/api/info')
+                    axios.get(`${API_URL}/api/products`),
+                    axios.get(`${API_URL}/api/categories`),
+                    axios.get(`${API_URL}/api/info`)
                 ]);
 
                 setPopularProducts(productsRes.data.slice(0, 6));

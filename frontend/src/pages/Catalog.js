@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
 import './Catalog.css';
+import API_URL from '../api';
 
 function Catalog({ addToCart }) {
     const [products, setProducts] = useState([]);
@@ -22,8 +23,8 @@ function Catalog({ addToCart }) {
         const fetchInitialData = async () => {
             try {
                 const [categoriesRes, storesRes] = await Promise.all([
-                    axios.get('http://localhost:5002/api/categories'),
-                    axios.get('http://localhost:5002/api/stores')
+                    axios.get(`${API_URL}/api/categories`),
+                    axios.get(`${API_URL}/api/stores`)
                 ]);
                 setCategories(categoriesRes.data);
                 setStores(storesRes.data);
@@ -43,7 +44,7 @@ function Catalog({ addToCart }) {
                     if (value) params[key] = value;
                 });
 
-                const response = await axios.get('http://localhost:5002/api/products', { params });
+                const response = await axios.get(`${API_URL}/api/products`, { params });
                 setProducts(response.data);
             } catch (error) {
                 console.error('Ошибка загрузки товаров:', error);

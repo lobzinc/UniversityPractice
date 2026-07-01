@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Register.css';
+import API_URL from '../api';
 
 function Register({ onLogin }) {
   const [isLoginMode, setIsLoginMode] = useState(false);
@@ -15,7 +16,7 @@ function Register({ onLogin }) {
     const endpoint = isLoginMode ? "/api/login" : "/api/register";
 
     try {
-      const response = await fetch("http://localhost:5002" + endpoint, {
+      const response = await fetch(`${API_URL}` + endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
