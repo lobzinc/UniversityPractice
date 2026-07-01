@@ -95,7 +95,7 @@
 
 .add-to-cart-btn {
     width: 100%;
-    background: #667eea;
+    background: #FE010C;
     color: white;
     border: none;
     padding: 0.8rem;
@@ -106,5 +106,5 @@
 }
 
 .add-to-cart-btn:hover {
-    background: #764ba2;
+    background: #FE010C;
 }

@@ -22,8 +22,8 @@ function Catalog({ addToCart }) {
         const fetchInitialData = async () => {
             try {
                 const [categoriesRes, storesRes] = await Promise.all([
-                    axios.get('http://localhost:5000/api/categories'),
-                    axios.get('http://localhost:5000/api/stores')
+                    axios.get('http://localhost:5002/api/categories'),
+                    axios.get('http://localhost:5002/api/stores')
                 ]);
                 setCategories(categoriesRes.data);
                 setStores(storesRes.data);
@@ -43,7 +43,7 @@ function Catalog({ addToCart }) {
                     if (value) params[key] = value;
                 });
 
-                const response = await axios.get('http://localhost:5000/api/products', { params });
+                const response = await axios.get('http://localhost:5002/api/products', { params });
                 setProducts(response.data);
             } catch (error) {
                 console.error('Ошибка загрузки товаров:', error);
@@ -86,19 +86,6 @@ function Catalog({ addToCart }) {
                             <option value="">Все категории</option>
                             {categories.map(cat => (
                                 <option key={cat.id} value={cat.name}>{cat.name}</option>
-                            ))}
-                        </select>
-                    </div>
-
-                    <div className="filter-group">
-                        <label>Магазин</label>
-                        <select
-                            value={filters.store}
-                            onChange={(e) => handleFilterChange('store', e.target.value)}
-                        >
-                            <option value="">Все магазины</option>
-                            {stores.map(store => (
-                                <option key={store} value={store}>{store}</option>
                             ))}
                         </select>
                     </div>

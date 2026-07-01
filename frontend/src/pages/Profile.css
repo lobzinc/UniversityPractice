@@ -1,0 +1,91 @@
+.profile-page {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.profile-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.profile-card h2 {
+    margin-bottom: 15px;
+}
+
+.btn-logout {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 15px 0;
+}
+
+.support-section {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.new-message {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.new-message textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 60px;
+    resize: none;
+}
+
+.new-message button {
+    background: #FE010C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.messages-list {
+    margin-top: 20px;
+}
+
+.message {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.message-text {
+    font-size: 15px;
+}
+
+.message-date {
+    color: #999;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.message-reply {
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.message-status {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}

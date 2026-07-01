@@ -8,7 +8,7 @@ function About() {
     useEffect(() => {
         const fetchCompanyInfo = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/info');
+                const response = await axios.get('http://localhost:5002/api/info');
                 setCompanyInfo(response.data);
             } catch (error) {
                 console.error('Ошибка загрузки информации о компании:', error);
@@ -25,29 +25,29 @@ function About() {
     return (
         <div className="about">
             <section className="about-hero">
-                <h1>О компании FoodExpress</h1>
+                <h1>О компании Семисвинофф</h1>
                 <p className="about-mission">{companyInfo.description}</p>
             </section>
 
             <section className="company-details">
                 <div className="detail-card">
-                    <h3>📅 Год основания</h3>
+                    <h3>Год основания</h3>
                     <p>{companyInfo.founded}</p>
                 </div>
                 <div className="detail-card">
-                    <h3>📞 Телефон</h3>
+                    <h3>Телефон</h3>
                     <p>{companyInfo.phone}</p>
                 </div>
                 <div className="detail-card">
-                    <h3>📧 Email</h3>
+                    <h3>Email</h3>
                     <p>{companyInfo.email}</p>
                 </div>
                 <div className="detail-card">
-                    <h3>📍 Адрес</h3>
+                    <h3>Адрес</h3>
                     <p>{companyInfo.address}</p>
                 </div>
                 <div className="detail-card">
-                    <h3>🕐 Режим работы</h3>
+                    <h3>Режим работы</h3>
                     <p>{companyInfo.workingHours}</p>
                 </div>
             </section>
@@ -69,24 +69,24 @@ function About() {
                 <h2>Почему выбирают нас?</h2>
                 <div className="advantages-grid">
                     <div className="advantage-card">
-                        <span className="advantage-icon">🚀</span>
-                        <h3>Быстрая доставка</h3>
-                        <p>Доставляем заказы от 30 минут</p>
+                        <span className="advantage-icon"></span>
+                        <h3>Кто, если не мы?</h3>
+                        <p>Единственная доставка из Семисвинофф</p>
                     </div>
                     <div className="advantage-card">
-                        <span className="advantage-icon">✅</span>
+                        <span className="advantage-icon"></span>
                         <h3>Качество продуктов</h3>
-                        <p>Только свежие и качественные товары</p>
+                        <p>Сомнительное, что придает остроту жизни</p>
                     </div>
                     <div className="advantage-card">
-                        <span className="advantage-icon">💰</span>
+                        <span className="advantage-icon"></span>
                         <h3>Выгодные цены</h3>
-                        <p>Регулярные акции и скидки</p>
+                        <p>Единственный агрегатор с отрицательными скидками</p>
                     </div>
                     <div className="advantage-card">
-                        <span className="advantage-icon">📱</span>
-                        <h3>Удобное приложение</h3>
-                        <p>Заказывайте в пару кликов</p>
+                        <span className="advantage-icon"></span>
+                        <h3>Удобный сайт</h3>
+                        <p>Написанный тремя калеками</p>
                     </div>
                 </div>
             </section>

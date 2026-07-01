@@ -19,7 +19,7 @@ function ProductCard({ product, onAddToCart }) {
                 <p className="product-store">{product.store}</p>
 
                 <div className="product-rating">
-                    ⭐ {product.rating}
+                    {product.rating}
                 </div>
 
                 <div className="product-price-section">
@@ -30,7 +30,7 @@ function ProductCard({ product, onAddToCart }) {
                 </div>
 
                 <div className="delivery-info">
-                    🚚 {product.deliveryTime}
+                    {product.deliveryTime}
                 </div>
 
                 <button

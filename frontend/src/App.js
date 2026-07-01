@@ -4,12 +4,45 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Catalog from './pages/Catalog';
 import About from './pages/About';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
 import Cart from './components/Cart';
+import Vacancy from './pages/Vacancy';
 import './App.css';
 
 function App() {
     const [cartItems, setCartItems] = useState([]);
     const [showCart, setShowCart] = useState(false);
+    const [user, setUser] = useState(() => {
+        const saved = localStorage.getItem('user');
+        return saved ? JSON.parse(saved) : null;
+    });
+
+    useEffect(() => {
+        const audio = new Audio('/sounds/click.mp3');
+        audio.volume = 0.3;
+
+        const handleClick = () => {
+            audio.currentTime = 0;
+            audio.play();
+        };
+
+        document.addEventListener('click', handleClick);
+
+        return () => {
+            document.removeEventListener('click', handleClick);
+        };
+    }, []);
+
+    const handleLogin = (userData) => {
+        setUser(userData);
+        localStorage.setItem('user', JSON.stringify(userData));
+    };
+
+    const handleLogout = () => {
+        setUser(null);
+        localStorage.removeItem('user');
+    };
 
     const addToCart = (product) => {
         setCartItems(prevItems => {
@@ -50,6 +83,7 @@ function App() {
                 <Header
                     cartCount={cartCount}
                     onCartClick={() => setShowCart(true)}
+                    user={user}
                 />
 
                 {showCart && (
@@ -69,28 +103,37 @@ function App() {
                 <main>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route
-                            path="/catalog"
-                            element={<Catalog addToCart={addToCart} />}
-                        />
+                        <Route path="/catalog" element={<Catalog addToCart={addToCart} />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/register" element={<Register onLogin={handleLogin} />} />
+                        <Route path="/vacancy" element={<Vacancy />} />
+                        <Route
+                            path="/profile"
+                            element={
+                                user ? (
+                                    <Profile user={user} onLogout={handleLogout} />
+                                ) : (
+                                    <Register onLogin={handleLogin} />
+                                )
+                            }
+                        />
                     </Routes>
                 </main>
 
                 <footer className="footer">
                     <div className="footer-content">
                         <div className="footer-section">
-                            <h3>FoodExpress</h3>
+                            <h3>Семисвинофф</h3>
                             <p>Доставка продуктов на дом</p>
                         </div>
                         <div className="footer-section">
                             <h4>Контакты</h4>
-                            <p>📞 +7 (800) 123-45-67</p>
-                            <p>📧 info@foodexpress.ru</p>
+                            <p>+7 (995) 909-00-52</p>
+                            <p>idersk@mail.ru</p>
                         </div>
                         <div className="footer-section">
                             <h4>Время работы</h4>
-                            <p>Ежедневно с 8:00 до 23:00</p>
+                            <p>Выходные дни с 03:00 до 03:33</p>
                         </div>
                     </div>
                 </footer>

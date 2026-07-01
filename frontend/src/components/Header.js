@@ -10,11 +10,10 @@ function Header({ cartCount, onCartClick }) {
             <div className="header-content">
                 <Link to="/" className="logo">
                     <img
-                        src="/images/logo_7s.png"
+                        src="/images/logo_7pig.png"
                         alt="Семисвинофф"
                         className="logo-image"
                     />
-                    <span className="logo-text">Семисвиноff</span>
                 </Link>
 
                 <nav className="nav">
@@ -36,10 +35,12 @@ function Header({ cartCount, onCartClick }) {
                     >
                         О компании
                     </Link>
+                    <Link to="/register" className="nav-link">Личный кабинет</Link>
+                    <Link to="/vacancy" className="nav-link highlight">Работа</Link>
                 </nav>
 
                 <button className="cart-button" onClick={onCartClick}>
-                    🛒 Корзина
+                    Корзина
                     {cartCount > 0 && (
                         <span className="cart-count">{cartCount}</span>
                     )}

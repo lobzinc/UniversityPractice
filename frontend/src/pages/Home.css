@@ -27,17 +27,19 @@
 .cta-button {
     display: inline-block;
     background: white;
-    color: #667eea;
+    color: #3a3a3a;
     padding: 1rem 2rem;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s; /* Добавили box-shadow в transition */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* Увеличенная тень при наведении */
 }
 
 .stats-section {
@@ -61,11 +63,11 @@
 .stat-number {
     font-size: 2rem;
     font-weight: bold;
-    color: #667eea;
+    color: #3a3a3a;
 }
 
 .stat-label {
-    color: #666;
+    color: #3a3a3a;
     margin-top: 0.5rem;
 }
 
@@ -90,21 +92,29 @@
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
-    color: #333;
+    color: #3a3a3a;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    transition: all 0.3s ease;
 }
 
 .category-card:hover {
     transform: translateY(-5px);
+    background: #FB0018;
+    color: white; 
+    box-shadow: 0 8px 25px rgba(251, 0, 24, 0.3);
 }
 
-.category-icon {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 0.5rem;
+.popular-section {
+    margin: 3rem 0;
 }
 
+.popular-section h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+
+/* Ваш существующий код */
 .popular-section {
     margin: 3rem 0;
 }
@@ -118,4 +128,53 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+}
+
+.products-grid .product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.products-grid .product-card:hover {
+    transform: translateY(-5px);
+}
+
+.products-grid .product-card img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    object-position: center;
+    display: block; 
+}
+
+.products-grid .product-card .product-info {
+    padding: 1rem;
+}
+
+.products-grid .product-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.products-grid .product-card .price {
+    font-weight: bold;
+    color: #FB0018;
+    font-size: 1.2rem;
+}
+
+.products-grid .product-card .add-to-cart {
+    background: #FB0018;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.products-grid .product-card .add-to-cart:hover {
+    background: #d40015;
 }

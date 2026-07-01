@@ -12,9 +12,9 @@ function Home() {
         const fetchData = async () => {
             try {
                 const [productsRes, categoriesRes, infoRes] = await Promise.all([
-                    axios.get('http://localhost:5000/api/products'),
-                    axios.get('http://localhost:5000/api/categories'),
-                    axios.get('http://localhost:5000/api/info')
+                    axios.get('http://localhost:5002/api/products'),
+                    axios.get('http://localhost:5002/api/categories'),
+                    axios.get('http://localhost:5002/api/info')
                 ]);
 
                 setPopularProducts(productsRes.data.slice(0, 6));
@@ -49,19 +49,19 @@ function Home() {
                     <div className="stats-grid">
                         <div className="stat-card">
                             <div className="stat-number">{companyInfo.stats.stores}+</div>
-                            <div className="stat-label">Магазинов</div>
+                            <div className="stat-label">Возраст для приема на работу</div>
                         </div>
                         <div className="stat-card">
                             <div className="stat-number">{companyInfo.stats.products.toLocaleString()}+</div>
-                            <div className="stat-label">Товаров</div>
+                            <div className="stat-label">Бабушек</div>
                         </div>
                         <div className="stat-card">
                             <div className="stat-number">{companyInfo.stats.deliveries.toLocaleString()}+</div>
-                            <div className="stat-label">Доставок</div>
+                            <div className="stat-label">Недоставленных товаров</div>
                         </div>
                         <div className="stat-card">
                             <div className="stat-number">{companyInfo.stats.cities}</div>
-                            <div className="stat-label">Городов</div>
+                            <div className="stat-label">Пищевых отравлений в день</div>
                         </div>
                     </div>
                 </section>
@@ -76,7 +76,6 @@ function Home() {
                             to={`/catalog?category=${category.name}`}
                             className="category-card"
                         >
-                            <span className="category-icon">{category.icon}</span>
                             <span className="category-name">{category.name}</span>
                         </Link>
                     ))}

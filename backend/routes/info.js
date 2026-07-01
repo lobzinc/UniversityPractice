@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
+// ленк здесь инфу в о компании мож поменять
 const companyInfo = {
-    name: "FoodExpress",
-    description: "Мы - современный агрегатор доставки продуктов из лучших магазинов вашего города. Наша миссия - сделать покупку продуктов быстрой, удобной и выгодной.",
-    founded: 2023,
-    phone: "+7 (800) 123-45-67",
-    email: "info@foodexpress.ru",
-    address: "г. Москва, ул. Примерная, д. 123",
-    workingHours: "Ежедневно с 8:00 до 23:00",
+    name: "Семисвинофф",
+    description: "Мы - современный дискаунт-магазин с самыми низкими ценами и не менее низким качеством продуктов. Наша компания следует современным тенденциям и трендам: бр бр патапим.",
+    founded: "988",
+    phone: "+7 (995) 909-00-52",
+    email: "idersk@mail.ru",
+    address: "г. Санкт-Петербург, ул. Московский проспект, д. 28",
+    workingHours: "Выходные с 03:00 до 03:33",
     stats: {
         stores: 50,
         products: 15000,
@@ -17,19 +18,19 @@ const companyInfo = {
     },
     team: [
         {
-            name: "Иван Петров",
-            position: "CEO",
-            photo: "https://via.placeholder.com/150"
+            name: "Даниэль Мустахряков",
+            position: "Отвественный за контроль качества",
+            photo: "https://i.imgur.com/iS6uJzb.png"
         },
         {
-            name: "Мария Сидорова",
-            position: "CTO",
-            photo: "https://via.placeholder.com/150"
+            name: "Елена Поросеева",
+            position: "Ген. Директор",
+            photo: "https://i.imgur.com/YpBQtbh.jpeg"
         },
         {
-            name: "Алексей Иванов",
-            position: "COO",
-            photo: "https://via.placeholder.com/150"
+            name: "Салтанат Сарсвинова",
+            position: "Руководитель отдела кадров",
+            photo: "https://i.imgur.com/aS3talF.jpeg"
         }
     ]
 };

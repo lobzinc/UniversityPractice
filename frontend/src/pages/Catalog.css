@@ -22,7 +22,7 @@
 
 .search-bar input:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #FE010C;
 }
 
 .catalog-content {
@@ -102,3 +102,5 @@
 .no-products p {
     margin-bottom: 0.5rem;
 }
+
+
