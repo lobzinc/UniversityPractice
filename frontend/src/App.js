@@ -24,7 +24,10 @@ function App() {
 
         const handleClick = () => {
             audio.currentTime = 0;
-            audio.play();
+            const promise = audio.play();
+            if (promise !== undefined) {
+                promise.catch(() => {});
+            }
         };
 
         document.addEventListener('click', handleClick);
