@@ -126,6 +126,7 @@
     text-align: center;
     padding: 3rem;
     color: #3a3a3a;
+<<<<<<< HEAD
 }
 
 .telegram-link {
@@ -152,4 +153,6 @@
 
 .detail-card a:hover {
     text-decoration: underline;
+=======
+>>>>>>> 9dfa6185a8fb2e296d997f7b0d4a0881ea2f0f52
 }

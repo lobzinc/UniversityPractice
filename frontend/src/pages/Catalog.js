@@ -8,6 +8,7 @@ function Catalog({ addToCart }) {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [, setStores] = useState([]);
+    const [stores, setStores] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const [filters, setFilters] = useState({
