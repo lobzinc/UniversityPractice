@@ -51,7 +51,6 @@ function About() {
                     <h3>Режим работы</h3>
                     <p>{companyInfo.workingHours}</p>
                 </div>
-<<<<<<< HEAD
                 {companyInfo.socialLinks && companyInfo.socialLinks.telegram && (
                     <div className="detail-card">
                         <h3>Telegram</h3>
@@ -60,8 +59,6 @@ function About() {
                         </a>
                     </div>
                 )}
-=======
->>>>>>> 9dfa6185a8fb2e296d997f7b0d4a0881ea2f0f52
             </section>
 
             <section className="team-section">
@@ -72,7 +69,6 @@ function About() {
                             <img src={member.photo} alt={member.name} className="team-photo" />
                             <h3>{member.name}</h3>
                             <p>{member.position}</p>
-<<<<<<< HEAD
                             {member.telegram && (
                                 <a
                                     href={member.telegram}
@@ -83,8 +79,7 @@ function About() {
                                     Telegram
                                 </a>
                             )}
-=======
->>>>>>> 9dfa6185a8fb2e296d997f7b0d4a0881ea2f0f52
+
                         </div>
                     ))}
                 </div>
