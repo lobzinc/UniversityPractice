@@ -7,8 +7,6 @@ import API_URL from '../api';
 function Catalog({ addToCart }) {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [, setStores] = useState([]);
-    const [stores, setStores] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const [filters, setFilters] = useState({
@@ -23,12 +21,8 @@ function Catalog({ addToCart }) {
     useEffect(() => {
         const fetchInitialData = async () => {
             try {
-                const [categoriesRes, storesRes] = await Promise.all([
-                    axios.get(`${API_URL}/api/categories`),
-                    axios.get(`${API_URL}/api/stores`)
-                ]);
+                const categoriesRes = await axios.get(`${API_URL}/api/categories`);
                 setCategories(categoriesRes.data);
-                setStores(storesRes.data);
             } catch (error) {
                 console.error('Ошибка загрузки данных:', error);
             }
@@ -117,8 +111,7 @@ function Catalog({ addToCart }) {
                         <select
                             value={filters.sort}
                             onChange={(e) => handleFilterChange('sort', e.target.value)}
-                        >
-                            <option value="">По умолчанию</option>
+                        ><option value="">По умолчанию</option>
                             <option value="price-asc">По возрастанию цены</option>
                             <option value="price-desc">По убыванию цены</option>
                             <option value="name">По названию</option>
