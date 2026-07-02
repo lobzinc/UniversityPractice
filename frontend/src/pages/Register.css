@@ -1,0 +1,188 @@
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.register-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  border-top: 5px solid #e30613; 
+}
+
+.register-card h2 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.reg-form input {
+  padding: 14px 16px;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.reg-form input:focus {
+  border-color: #ffda00; 
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(255, 218, 0, 0.2);
+}
+
+.btn-red {
+  background-color: #e30613;
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn-red:hover {
+  background-color: #c40510;
+  transform: translateY(-2px);
+}
+
+.btn-red:active {
+  transform: translateY(0);
+}
+
+.status-msg {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e30613; 
+  min-height: 20px;
+}
+
+.btn-switch {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 15px;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.btn-switch:hover {
+  color: #e30613;
+}
+
+@media (max-width: 480px) {
+  .register-card {
+    padding: 25px;
+  }
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.admin-tabs button {
+  padding: 8px 20px;
+  border: 2px solid #c0392b;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.admin-tabs button.active {
+  background: #c0392b;
+  color: white;
+}
+
+.admin-stats {
+  margin-left: auto;
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.stat-open {
+  color: #f39c12;
+}
+
+.stat-closed {
+  color: #27ae60;
+}
+
+.message-user {
+  color: #667eea;
+  margin-bottom: 5px;
+}
+
+.admin-reply {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.admin-reply textarea {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: 50px;
+  resize: none;
+  font-size: 14px;
+}
+
+.admin-reply button {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-reply button:hover {
+  background: #219a52;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.btn-delete:hover {
+  background: #c0392b;
+}
